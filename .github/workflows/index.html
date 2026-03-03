@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html><head><title></title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>个人作品集 | 三维 &amp; 平面设计</title><script src="./tailwindcss.js"></script><script src="./iconify-icon.min.js"></script></head><body><style id="global-styles" type="text/tailwindcss">
+      @layer base {
+        body {
+          @apply bg-[#050505] text-white selection:bg-white selection:text-black;
+          font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+      }
+      .masonry-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+      }
+      @media (min-width: 640px) { .masonry-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1024px) { .masonry-grid { grid-template-columns: repeat(4, 1fr); } }
+      
+      .hover-reveal {
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .portfolio-card:hover .hover-reveal {
+        transform: scale(1.05);
+      }
+      .blur-backdrop {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+    </style>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <style id="modal-custom-styles" type="text/tailwindcss">
+      @layer utilities {
+        .modal-open {
+          overflow: hidden;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      }
+    </style>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <section id="category-nav-section" class="py-24 md:py-48 container mx-auto px-6 overflow-hidden">
+      <div id="category-container" class="flex flex-col space-y-12 md:space-y-16">
+        
+        <!-- 01. 3D Design Category -->
+        <a href="#3d-works" id="nav-item-3d" class="group relative block w-full border-b border-white/5 pb-10 transition-all duration-700 hover:pl-8">
+          <div id="nav-content-3d" class="relative z-10">
+            <div id="nav-meta-3d" class="flex items-center space-x-4 mb-4">
+              <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.5em] text-gray-500 group-hover:text-white transition-colors duration-300">Section 01</span>
+              <div class="h-[1px] w-8 bg-white/20 group-hover:w-16 transition-all duration-500"></div>
+              <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-gray-400">Digital Dimension</span>
+            </div>
+            <h2 id="nav-title-3d" class="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-6xl group-hover:sm:text-7xl group-hover:md:text-8xl group-hover:tracking-normal">
+              三维设计
+            </h2>
+            <div id="nav-action-3d" class="mt-6 flex items-center space-x-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 delay-100">
+              <span class="text-sm font-light tracking-[0.2em] uppercase text-white/60">Explore 3D Works</span>
+              <iconify-icon icon="line-md:arrow-right" class="text-2xl text-white group-hover:translate-x-3 transition-transform duration-500"></iconify-icon>
+            </div>
+          </div>
+          <div id="bg-text-3d" class="absolute top-1/2 left-0 -translate-y-1/2 text-[8rem] md:text-[12rem] font-black text-white/[0.01] pointer-events-none select-none transition-all duration-1000 group-hover:text-white/[0.03] group-hover:-translate-x-8 group-hover:scale-125">3D</div>
+        </a>
+
+        <!-- 02. Graphic Design Category -->
+        <a href="#graphic-works" id="nav-item-graphic" class="group relative block w-full border-b border-white/5 pb-10 transition-all duration-700 hover:pl-8">
+          <div id="nav-content-graphic" class="relative z-10">
+            <div id="nav-meta-graphic" class="flex items-center space-x-4 mb-4">
+              <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.5em] text-gray-500 group-hover:text-white transition-colors duration-300">Section 02</span>
+              <div class="h-[1px] w-8 bg-white/20 group-hover:w-16 transition-all duration-500"></div>
+              <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-gray-400">Visual Identity</span>
+            </div>
+            <h2 id="nav-title-graphic" class="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-6xl group-hover:sm:text-7xl group-hover:md:text-8xl group-hover:tracking-normal">
+              平面设计
+            </h2>
+            <div id="nav-action-graphic" class="mt-6 flex items-center space-x-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 delay-100">
+              <span class="text-sm font-light tracking-[0.2em] uppercase text-white/60">View Graphics</span>
+              <iconify-icon icon="line-md:arrow-right" class="text-2xl text-white group-hover:translate-x-3 transition-transform duration-500"></iconify-icon>
+            </div>
+          </div>
+          <div id="bg-text-graphic" class="absolute top-1/2 left-0 -translate-y-1/2 text-[8rem] md:text-[12rem] font-black text-white/[0.01] pointer-events-none select-none transition-all duration-1000 group-hover:text-white/[0.03] group-hover:-translate-x-8 group-hover:scale-125">GD</div>
+        </a>
+
+        <!-- 03. Motion Graphics Category (New) -->
+        <a href="#motion-works" id="nav-item-motion" class="group relative block w-full border-b border-white/5 pb-10 transition-all duration-700 hover:pl-8">
+          <div id="nav-content-motion" class="relative z-10">
+            <div id="nav-meta-motion" class="flex items-center space-x-4 mb-4">
+              <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.5em] text-gray-500 group-hover:text-white transition-colors duration-300">Section 03</span>
+              <div class="h-[1px] w-8 bg-white/20 group-hover:w-16 transition-all duration-500"></div>
+              <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-gray-400">Motion &amp; VFX</span>
+            </div>
+            <h2 id="nav-title-motion" class="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-6xl group-hover:sm:text-7xl group-hover:md:text-8xl group-hover:tracking-normal">
+              动态图形
+            </h2>
+            <div id="nav-action-motion" class="mt-6 flex items-center space-x-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 delay-100">
+              <span class="text-sm font-light tracking-[0.2em] uppercase text-white/60">Watch Reels</span>
+              <iconify-icon icon="line-md:arrow-right" class="text-2xl text-white group-hover:translate-x-3 transition-transform duration-500"></iconify-icon>
+            </div>
+          </div>
+          <div id="bg-text-motion" class="absolute top-1/2 left-0 -translate-y-1/2 text-[8rem] md:text-[12rem] font-black text-white/[0.01] pointer-events-none select-none transition-all duration-1000 group-hover:text-white/[0.03] group-hover:-translate-x-8 group-hover:scale-125">MG</div>
+        </a>
+
+      </div>
+    </section>
+
+<header id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-300 border-b border-white/5 blur-backdrop">
+      <nav class="container mx-auto px-6 h-20 flex items-center justify-between">
+        <div id="nav-logo" class="text-2xl font-black tracking-tighter uppercase">Studio.</div>
+        <div id="nav-links" class="hidden md:flex space-x-12 text-sm font-medium uppercase tracking-widest">
+          <a href="#" class="hover:text-gray-400 transition-colors">Works</a>
+          <a href="#" class="hover:text-gray-400 transition-colors">Services</a>
+          <a href="#" class="hover:text-gray-400 transition-colors">About</a>
+          <a href="#" class="hover:text-gray-400 transition-colors">Contact</a>
+        </div>
+        <button id="menu-toggle" class="md:hidden text-2xl">
+          <iconify-icon icon="line-md:menu-to-close-alt-transition"></iconify-icon>
+        </button>
+      </nav>
+    </header>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <section id="motion-works-grid" class="pb-24 container mx-auto px-6">
+      <div id="motion-works-header" class="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-6 mb-12 space-y-4 md:space-y-0">
+        <div id="motion-title-group" class="flex items-center space-x-6">
+          <div id="motion-category-tag" class="border border-white/20 px-3 py-1">
+            <span id="motion-tag-text" class="text-[10px] uppercase tracking-[0.3em] text-gray-400">Category 03</span>
+          </div>
+          <h2 id="motion-works" class="text-3xl md:text-5xl font-black uppercase tracking-tighter">动态图形</h2>
+        </div>
+        <div id="motion-meta-info" class="text-[10px] md:text-xs uppercase tracking-[0.4em] text-gray-500">
+          Motion Graphics / VFX
+        </div>
+      </div>
+
+      <div id="motion-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Motion Work 01 -->
+        <div id="motion-card-1" class="portfolio-card group relative aspect-[3/4] overflow-hidden bg-[#111] cursor-pointer" onclick="openProjectModal('Kinetic Type', 'Motion', 'https://picsum.photos/seed/motion1-long/1200/3600')">
+          <img id="motion-img-1" src="https://picsum.photos/seed/motion1/800/1200" alt="Motion Work" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:opacity-40">
+          <div id="motion-overlay-1" class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span id="motion-label-1" class="text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-2">Motion</span>
+            <h3 id="motion-name-1" class="text-xl font-bold uppercase tracking-widest text-white">Kinetic Type</h3>
+          </div>
+          <div id="motion-play-1" class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="w-16 h-16 border border-white/30 rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-125 group-hover:border-white">
+              <iconify-icon icon="ph:play-fill" class="text-2xl text-white"></iconify-icon>
+            </div>
+          </div>
+        </div>
+
+        <!-- Motion Work 02 -->
+        <div id="motion-card-2" class="portfolio-card group relative aspect-[3/4] overflow-hidden bg-[#111] cursor-pointer" onclick="openProjectModal('Organic Flow', 'Motion', 'https://picsum.photos/seed/motion2-long/1200/3600')">
+          <img id="motion-img-2" src="https://picsum.photos/seed/motion2/800/1200" alt="Motion Work" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:opacity-40">
+          <div id="motion-overlay-2" class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span id="motion-label-2" class="text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-2">VFX</span>
+            <h3 id="motion-name-2" class="text-xl font-bold uppercase tracking-widest text-white">Organic Flow</h3>
+          </div>
+          <div id="motion-play-2" class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="w-16 h-16 border border-white/30 rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-125 group-hover:border-white">
+              <iconify-icon icon="ph:play-fill" class="text-2xl text-white"></iconify-icon>
+            </div>
+          </div>
+        </div>
+
+        <!-- Motion Work 03 -->
+        <div id="motion-card-3" class="portfolio-card group relative aspect-[3/4] overflow-hidden bg-[#111] cursor-pointer" onclick="openProjectModal('Digital Decay', 'Motion', 'https://picsum.photos/seed/motion3-long/1200/3600')">
+          <img id="motion-img-3" src="https://picsum.photos/seed/motion3/800/1200" alt="Motion Work" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:opacity-40">
+          <div id="motion-overlay-3" class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span id="motion-label-3" class="text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-2">Animation</span>
+            <h3 id="motion-name-3" class="text-xl font-bold uppercase tracking-widest text-white">Digital Decay</h3>
+          </div>
+          <div id="motion-play-3" class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="w-16 h-16 border border-white/30 rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-125 group-hover:border-white">
+              <iconify-icon icon="ph:play-fill" class="text-2xl text-white"></iconify-icon>
+            </div>
+          </div>
+        </div>
+
+        <!-- Motion Work 04 -->
+        <div id="motion-card-4" class="portfolio-card group relative aspect-[3/4] overflow-hidden bg-[#111] cursor-pointer" onclick="openProjectModal('Neon Pulse', 'Motion', 'https://picsum.photos/seed/motion4-long/1200/3600')">
+          <img id="motion-img-4" src="https://picsum.photos/seed/motion4/800/1200" alt="Motion Work" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:opacity-40">
+          <div id="motion-overlay-4" class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span id="motion-label-4" class="text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-2">Rendering</span>
+            <h3 id="motion-name-4" class="text-xl font-bold uppercase tracking-widest text-white">Neon Pulse</h3>
+          </div>
+          <div id="motion-play-4" class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="w-16 h-16 border border-white/30 rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-125 group-hover:border-white">
+              <iconify-icon icon="ph:play-fill" class="text-2xl text-white"></iconify-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <section id="graphic-works-grid" class="container mx-auto px-6 pb-24">
+      <!-- Graphic Section Header -->
+      <div id="graphic-works-header" class="flex items-center justify-between border-b border-white/10 pb-6 mb-12">
+        <div class="flex items-center space-x-4">
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-white/40">Category 01</span>
+          <h2 class="text-2xl md:text-3xl font-black uppercase tracking-wider">平面设计</h2>
+        </div>
+        <div class="hidden md:block text-[10px] uppercase tracking-[0.4em] text-white/20 font-medium">Visual Identity / Editorial</div>
+      </div>
+      
+      <!-- Graphic Grid -->
+      <div id="grid-graphic-content" class="masonry-grid">
+        <div class="portfolio-card group relative aspect-[3/4] overflow-hidden bg-[#111] cursor-pointer" onclick="openProjectModal('Typographic Poster', 'Graphic', 'https://picsum.photos/seed/gd1-long/1200/3600')">
+          <img src="https://picsum.photos/seed/gd1/800/1200" alt="Graphic Work" class="hover-reveal w-full h-full object-cover opacity-80 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end pointer-events-none">
+            <span class="text-xs uppercase tracking-widest text-gray-400 mb-2">Graphic</span>
+            <h3 class="text-xl font-bold">Typographic Poster</h3>
+          </div>
+        </div>
+        <div class="portfolio-card group relative aspect-[3/4] overflow-hidden bg-[#111] cursor-pointer" onclick="openProjectModal('Brand Evolution', 'Identity', 'https://picsum.photos/seed/gd2-long/1200/3600')">
+          <img src="https://picsum.photos/seed/gd2/800/1200" alt="Graphic Work" class="hover-reveal w-full h-full object-cover opacity-80 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end pointer-events-none">
+            <span class="text-xs uppercase tracking-widest text-gray-400 mb-2">Identity</span>
+            <h3 class="text-xl font-bold">Brand Evolution</h3>
+          </div>
+        </div>
+        <div class="portfolio-card group relative aspect-[3/4] overflow-hidden bg-[#111] cursor-pointer" onclick="openProjectModal('Magazine Layout', 'Editorial', 'https://picsum.photos/seed/gd3-long/1200/3600')">
+          <img src="https://picsum.photos/seed/gd3/800/1200" alt="Graphic Work" class="hover-reveal w-full h-full object-cover opacity-80 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end pointer-events-none">
+            <span class="text-xs uppercase tracking-widest text-gray-400 mb-2">Editorial</span>
+            <h3 class="text-xl font-bold">Magazine Layout</h3>
+          </div>
+        </div>
+        <div class="portfolio-card group relative aspect-[3/4] overflow-hidden bg-[#111] cursor-pointer" onclick="openProjectModal('Crypto Dashboard', 'UI/UX', 'https://picsum.photos/seed/gd4-long/1200/3600')">
+          <img src="https://picsum.photos/seed/gd4/800/1200" alt="Graphic Work" class="hover-reveal w-full h-full object-cover opacity-80 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end pointer-events-none">
+            <span class="text-xs uppercase tracking-widest text-gray-400 mb-2">UI/UX</span>
+            <h3 class="text-xl font-bold">Crypto Dashboard</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <section id="works-grid" class="container mx-auto px-6 pb-24">
+      <!-- 3D Section Header -->
+      <div id="3d-works-header" class="flex items-center justify-between border-b border-white/10 pb-6 mb-12">
+        <div class="flex items-center space-x-4">
+          <span class="text-xs font-bold uppercase tracking-[0.3em] text-white/40">Category 02</span>
+          <h2 class="text-2xl md:text-3xl font-black uppercase tracking-wider">三维设计</h2>
+        </div>
+        <div class="hidden md:block text-[10px] uppercase tracking-[0.4em] text-white/20 font-medium">3D Visualization / Motion</div>
+      </div>
+      
+      <!-- 3D Grid -->
+      <div id="grid-3d-content" class="masonry-grid">
+        <div class="portfolio-card group relative aspect-[3/4] overflow-hidden bg-[#111] cursor-pointer" onclick="openProjectModal('Abstract Geometry 01', '3D Design', 'https://picsum.photos/seed/3d1-long/1200/3600')">
+          <img src="https://picsum.photos/seed/3d1/800/1200" alt="3D Work" class="hover-reveal w-full h-full object-cover opacity-80 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end pointer-events-none">
+            <span class="text-xs uppercase tracking-widest text-gray-400 mb-2">3D Design</span>
+            <h3 class="text-xl font-bold">Abstract Geometry 01</h3>
+          </div>
+        </div>
+        <div class="portfolio-card group relative aspect-[3/4] overflow-hidden bg-[#111] cursor-pointer" onclick="openProjectModal('Cyberpunk Interior', '3D Render', 'https://picsum.photos/seed/3d2-long/1200/3600')">
+          <img src="https://picsum.photos/seed/3d2/800/1200" alt="3D Work" class="hover-reveal w-full h-full object-cover opacity-80 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end pointer-events-none">
+            <span class="text-xs uppercase tracking-widest text-gray-400 mb-2">3D Render</span>
+            <h3 class="text-xl font-bold">Cyberpunk Interior</h3>
+          </div>
+        </div>
+        <div class="portfolio-card group relative aspect-[3/4] overflow-hidden bg-[#111] cursor-pointer" onclick="openProjectModal('Liquid Metal', 'C4D / Octane', 'https://picsum.photos/seed/3d3-long/1200/3600')">
+          <img src="https://picsum.photos/seed/3d3/800/1200" alt="3D Work" class="hover-reveal w-full h-full object-cover opacity-80 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end pointer-events-none">
+            <span class="text-xs uppercase tracking-widest text-gray-400 mb-2">C4D / Octane</span>
+            <h3 class="text-xl font-bold">Liquid Metal</h3>
+          </div>
+        </div>
+        <div class="portfolio-card group relative aspect-[3/4] overflow-hidden bg-[#111] cursor-pointer" onclick="openProjectModal('Minimalist Arch', 'Visualization', 'https://picsum.photos/seed/3d4-long/1200/3600')">
+          <img src="https://picsum.photos/seed/3d4/800/1200" alt="3D Work" class="hover-reveal w-full h-full object-cover opacity-80 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end pointer-events-none">
+            <span class="text-xs uppercase tracking-widest text-gray-400 mb-2">Visualization</span>
+            <h3 class="text-xl font-bold">Minimalist Arch</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+    <section id="services" class="bg-white text-black py-32">
+      <div class="container mx-auto px-6">
+        <h2 id="services-title" class="text-5xl font-bold mb-20 uppercase">Services.</h2>
+        <div class="grid md:grid-cols-3 gap-16">
+          <div class="service-item border-t border-black pt-8">
+            <span class="text-sm font-bold opacity-30 mb-4 block">01 /</span>
+            <h4 class="text-2xl font-bold mb-4">3D Visuals</h4>
+            <p class="text-gray-600 leading-relaxed">从产品渲染到抽象视觉动画，提供全方位的次元构建服务。</p>
+          </div>
+          <div class="service-item border-t border-black pt-8">
+            <span class="text-sm font-bold opacity-30 mb-4 block">02 /</span>
+            <h4 class="text-2xl font-bold mb-4">Graphic Design</h4>
+            <p class="text-gray-600 leading-relaxed">品牌视觉识别系统、海报及出版物设计，平衡商业与艺术。</p>
+          </div>
+          <div class="service-item border-t border-black pt-8">
+            <span class="text-sm font-bold opacity-30 mb-4 block">03 /</span>
+            <h4 class="text-2xl font-bold mb-4">Motion Design</h4>
+            <p class="text-gray-600 leading-relaxed">动态图形叙事，为平面视觉注入生命与节奏。</p>
+          </div>
+        </div>
+      </div>
+    </section><section id="contact-cta" class="py-40 container mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-7xl font-bold mb-12 tracking-tight">准备好开始创作了吗？</h2>
+      <a href="mailto:hello@example.com" class="inline-block text-xl border-b-2 border-white pb-2 hover:opacity-50 transition-all duration-300 uppercase tracking-widest">Let's Talk</a>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    <div id="project-modal-container" class="fixed inset-0 z-[100] opacity-0 transition-opacity duration-500 hidden">
+      <!-- Overlay Backdrop -->
+      <div id="modal-backdrop" class="absolute inset-0 bg-black/95 backdrop-blur-xl cursor-zoom-out"></div>
+      
+      <!-- Close Button -->
+      <button id="close-modal" class="fixed top-8 right-8 z-[110] text-white/50 hover:text-white transition-colors p-4">
+        <iconify-icon icon="line-md:close" class="text-3xl" contenteditable="true"></iconify-icon>
+      </button>
+
+      <!-- Project Info Sidebar (Desktop) -->
+      <div class="fixed left-0 top-0 bottom-0 w-80 p-12 hidden lg:flex flex-col justify-between z-[105] pointer-events-none">
+        <div>
+          <span id="modal-category" class="text-xs uppercase tracking-[0.4em] text-white/40 block mb-4">C4D / Octane</span>
+          <h2 id="modal-title" class="text-4xl font-bold leading-tight">Liquid Metal</h2>
+        </div>
+        <div class="text-white/30 text-xs tracking-widest">
+          SCROLL TO EXPLORE ↓
+        </div>
+      </div>
+
+      <!-- Long Image Container -->
+      <div id="modal-content-wrapper" class="relative h-full w-full overflow-y-auto scroll-smooth scrollbar-hide z-[102] py-20">
+        <div class="max-w-4xl mx-auto px-6 flex flex-col items-center">
+          <img id="modal-long-image" src="" alt="Project Detail" class="w-full h-auto shadow-2xl rounded-sm transition-transform duration-700 scale-95 opacity-0">
+          
+          <!-- Bottom Info (Mobile) -->
+          <div class="mt-12 text-center lg:hidden">
+            <span id="modal-category-mobile" class="text-xs uppercase tracking-[0.4em] text-white/40 block mb-2">C4D / Octane</span>
+            <h2 id="modal-title-mobile" class="text-3xl font-bold">Liquid Metal</h2>
+          </div>
+
+          <!-- Final Footer Action -->
+          <div class="py-32 flex flex-col items-center gap-8">
+            <div class="h-px w-20 bg-white/10"></div>
+            <button onclick="closeProjectModal()" class="group flex items-center gap-4 text-white/60 hover:text-white transition-all">
+              <span class="text-sm tracking-widest">BACK TO GALLERY</span>
+              <iconify-icon icon="line-md:arrow-up" class="text-xl group-hover:-translate-y-2 transition-transform"></iconify-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div><footer id="footer" class="border-t border-white/5 py-12">
+      <div class="container mx-auto px-6 flex flex-col md:row justify-between items-center gap-8">
+        <div class="text-xs text-gray-500 uppercase tracking-widest">© 2026 Portfolio Studio. All Rights Reserved.</div>
+        <div class="flex space-x-8">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors"><iconify-icon icon="mdi:instagram" class="text-xl"></iconify-icon></a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors"><iconify-icon icon="mdi:twitter" class="text-xl"></iconify-icon></a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors"><iconify-icon icon="mdi:linkedin" class="text-xl"></iconify-icon></a>
+        </div>
+      </div>
+    </footer><script id="main-js">
+      (function() { 
+        // 导航栏滚动逻辑
+        window.addEventListener('scroll', () => {
+          const header = document.getElementById('main-nav');
+          if (header) {
+            if (window.scrollY > 50) {
+              header.classList.add('py-4', 'bg-black/80');
+              header.classList.remove('h-20');
+            } else {
+              header.classList.remove('py-4', 'bg-black/80');
+              header.classList.add('h-20');
+            }
+          }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+
+        // 弹窗相关元素
+        const modal = document.getElementById('project-modal-container');
+        const backdrop = document.getElementById('modal-backdrop');
+        const closeBtn = document.getElementById('close-modal');
+        const longImg = document.getElementById('modal-long-image');
+        const wrapper = document.getElementById('modal-content-wrapper');
+
+        // 打开弹窗函数
+        window.openProjectModal = function(title, category, imgSrc) {
+          // 更新内容
+          document.getElementById('modal-title').innerText = title;
+          document.getElementById('modal-title-mobile').innerText = title;
+          document.getElementById('modal-category').innerText = category;
+          document.getElementById('modal-category-mobile').innerText = category;
+          
+          // 加载图片
+          longImg.src = imgSrc;
+          
+          // 显示弹窗
+          modal.classList.remove('hidden');
+          setTimeout(() => {
+            modal.classList.add('opacity-100');
+            longImg.classList.add('scale-100', 'opacity-100');
+          }, 50);
+
+          // 禁用页面滚动
+          document.body.classList.add('modal-open');
+        };
+
+        // 关闭弹窗函数
+        window.closeProjectModal = function() {
+          modal.classList.remove('opacity-100');
+          longImg.classList.remove('scale-100', 'opacity-100');
+          
+          setTimeout(() => {
+            modal.classList.add('hidden');
+            wrapper.scrollTop = 0;
+            longImg.src = '';
+          }, 500);
+
+          // 恢复页面滚动
+          document.body.classList.remove('modal-open');
+        };
+
+        // 事件监听
+        if (closeBtn) closeBtn.addEventListener('click', closeProjectModal);
+        if (backdrop) backdrop.addEventListener('click', closeProjectModal);
+
+        // ESC 键关闭
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeProjectModal();
+        });
+      })();
+    </script></body></html>
